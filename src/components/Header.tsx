@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Heart, User, Search, MessageCircle, Bell } from 'lucide-react';
+import { Heart, User, Search, MessageCircle, Bell, CreditCard } from 'lucide-react';
 
 const Header = () => {
   const location = useLocation();
@@ -47,6 +47,12 @@ const Header = () => {
             >
               Messages
             </Link>
+            <Link 
+              to="/plans" 
+              className={`text-gray-700 hover:text-pink-500 transition-colors ${isActive('/plans') ? 'text-pink-500 font-medium' : ''}`}
+            >
+              Plans
+            </Link>
           </nav>
 
           {/* Right side actions */}
@@ -55,12 +61,19 @@ const Header = () => {
               <Bell className="w-5 h-5" />
               <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full text-xs"></span>
             </Button>
-            <Button variant="ghost" size="icon">
-              <User className="w-5 h-5" />
-            </Button>
-            <Button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white">
-              Upgrade
-            </Button>
+            
+            <Link to="/myprofile">
+              <Button variant="ghost" size="icon">
+                <User className="w-5 h-5" />
+              </Button>
+            </Link>
+            
+            <Link to="/plans">
+              <Button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white">
+                <CreditCard className="w-4 h-4 mr-2" />
+                Upgrade
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
