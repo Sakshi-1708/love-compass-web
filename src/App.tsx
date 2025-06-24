@@ -11,6 +11,9 @@ import Messages from "./pages/Messages";
 import Index from "./pages/Index";
 import Plans from "./pages/Plans";
 import MyProfile from "./pages/MyProfile";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import ProfileView from "./pages/ProfileView";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,7 +32,11 @@ const App = () => (
             <Route path="dashboard" element={<Index />} />
             <Route path="plans" element={<Plans />} />
             <Route path="myprofile" element={<MyProfile />} />
+            <Route path="profile/:id" element={<ProfileView />} />
           </Route>
+          {/* Auth routes without layout */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
