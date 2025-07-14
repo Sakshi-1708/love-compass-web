@@ -14,6 +14,10 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import ProfileView from "./pages/ProfileView.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import Interests from "./pages/Interests.jsx";
+import Shortlist from "./pages/Shortlist.jsx";
+import Matches from "./pages/Matches.jsx";
+import Settings from "./pages/Settings.jsx";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +36,10 @@ const App = () => (
             <Route path="plans" element={<Plans />} />
             <Route path="myprofile" element={<MyProfile />} />
             <Route path="profile/:id" element={<ProfileView />} />
+            <Route path="interests" element={<Interests />} />
+            <Route path="shortlist" element={<Shortlist />} />
+            <Route path="matches" element={<Matches />} />
+            <Route path="settings" element={<Settings />} />
           </Route>
           {/* Auth routes without layout */}
           <Route path="/login" element={<Login />} />
